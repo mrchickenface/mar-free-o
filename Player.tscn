@@ -1,0 +1,138 @@
+[gd_scene load_steps=15 format=3 uid="uid://c48poqcncba14"]
+
+[ext_resource type="Texture2D" uid="uid://bw5yieycxw8yr" path="res://ujg2.png" id="1_gcam7"]
+[ext_resource type="Script" path="res://Player.gd" id="1_yahif"]
+[ext_resource type="Script" path="res://score.gd" id="3_yfl3r"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4spud"]
+atlas = ExtResource("1_gcam7")
+region = Rect2(125, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ndqmo"]
+atlas = ExtResource("1_gcam7")
+region = Rect2(221, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8xn7t"]
+atlas = ExtResource("1_gcam7")
+region = Rect2(205, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j65ao"]
+atlas = ExtResource("1_gcam7")
+region = Rect2(141, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dih0n"]
+atlas = ExtResource("1_gcam7")
+region = Rect2(157, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hgvyp"]
+atlas = ExtResource("1_gcam7")
+region = Rect2(173, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dgiki"]
+atlas = ExtResource("1_gcam7")
+region = Rect2(189, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1cvai"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4spud")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ndqmo")
+}],
+"loop": true,
+"name": &"die",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8xn7t")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j65ao")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dih0n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hgvyp")
+}],
+"loop": true,
+"name": &"run",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dgiki")
+}],
+"loop": true,
+"name": &"skrrt",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dl528"]
+radius = 6.0
+height = 16.0
+
+[sub_resource type="Animation" id="Animation_ta16b"]
+resource_name = "die"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, -8), Vector2(0, -100), Vector2(0, -8)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_bnbxi"]
+_data = {
+"die": SubResource("Animation_ta16b")
+}
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_yahif")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -8)
+sprite_frames = SubResource("SpriteFrames_1cvai")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -8)
+shape = SubResource("CapsuleShape2D_dl528")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(0, -67)
+zoom = Vector2(4, 4)
+limit_bottom = 200
+
+[node name="CanvasGroup" type="CanvasGroup" parent="Camera2D"]
+position = Vector2(0, 67)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Camera2D/CanvasGroup"]
+offset_left = -144.0
+offset_top = -148.0
+offset_right = -21.0
+offset_bottom = -123.0
+text = "Score:"
+script = ExtResource("3_yfl3r")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_bnbxi")
+}

@@ -1,0 +1,71 @@
+[gd_scene load_steps=7 format=3 uid="uid://dc6hoflr6l6j1"]
+
+[ext_resource type="Script" path="res://flag.gd" id="1_p83m7"]
+[ext_resource type="Texture2D" uid="uid://dpnf26j1s5kv0" path="res://flagge.png" id="2_xjj8d"]
+[ext_resource type="Texture2D" uid="uid://d3bu2a2ur5f7a" path="res://jflag.png" id="3_0xgy2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_73tmi"]
+size = Vector2(20, 19.9465)
+
+[sub_resource type="Animation" id="Animation_cjyb7"]
+resource_name = "win"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Flagge:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-21, -161), Vector2(-21, 34)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Jflag:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-20.7778, 34), Vector2(-20.7778, -160)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_dxxkc"]
+_data = {
+"win": SubResource("Animation_cjyb7")
+}
+
+[node name="flag" type="Node2D"]
+script = ExtResource("1_p83m7")
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(0, -91)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -0.244576)
+scale = Vector2(0.4, 9.14891)
+shape = SubResource("RectangleShape2D_73tmi")
+
+[node name="Flagge" type="Sprite2D" parent="."]
+z_index = -2000
+position = Vector2(-21, -161)
+scale = Vector2(0.3125, 0.3125)
+texture = ExtResource("2_xjj8d")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_dxxkc")
+}
+
+[node name="Jflag" type="Sprite2D" parent="."]
+z_index = -2000
+position = Vector2(-20.7778, 34)
+scale = Vector2(0.309028, 0.305556)
+texture = ExtResource("3_0xgy2")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
