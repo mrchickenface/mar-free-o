@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bw5yieycxw8yr"
-path="res://.godot/imported/ujg2.png-4e242d538bb035d611640921264dc190.ctex"
+uid="uid://k526ngde8xcr"
+path="res://.godot/imported/cityscape.png-17f28faf570025e8ec2d1824a4404d83.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ujg2.png"
-dest_files=["res://.godot/imported/ujg2.png-4e242d538bb035d611640921264dc190.ctex"]
+source_file="res://textures/cityscape.png"
+dest_files=["res://.godot/imported/cityscape.png-17f28faf570025e8ec2d1824a4404d83.ctex"]
 
 [params]
 

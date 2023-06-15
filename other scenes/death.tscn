@@ -1,11 +1,11 @@
 [gd_scene load_steps=3 format=3 uid="uid://w7e37v0nx7jf"]
 
-[ext_resource type="Script" path="res://death.gd" id="1_jt5t1"]
+[ext_resource type="Script" path="res://scripts/death.gd" id="1_hy5b2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yfh7k"]
 
 [node name="death" type="Node2D"]
-script = ExtResource("1_jt5t1")
+script = ExtResource("1_hy5b2")
 
 [node name="Area2D" type="Area2D" parent="."]
 

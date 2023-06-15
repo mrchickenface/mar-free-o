@@ -1,8 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://dc6hoflr6l6j1"]
+[gd_scene load_steps=7 format=3 uid="uid://c8qwuupcfdqft"]
 
-[ext_resource type="Script" path="res://flag.gd" id="1_p83m7"]
-[ext_resource type="Texture2D" uid="uid://dpnf26j1s5kv0" path="res://flagge.png" id="2_xjj8d"]
-[ext_resource type="Texture2D" uid="uid://d3bu2a2ur5f7a" path="res://jflag.png" id="3_0xgy2"]
+[ext_resource type="Script" path="res://scripts/flag.gd" id="1_nll7h"]
+[ext_resource type="Texture2D" uid="uid://dpnf26j1s5kv0" path="res://textures/flagge.png" id="2_i3v4q"]
+[ext_resource type="Texture2D" uid="uid://d3bu2a2ur5f7a" path="res://textures/jflag.png" id="3_uhemx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_73tmi"]
 size = Vector2(20, 19.9465)
@@ -41,7 +41,7 @@ _data = {
 }
 
 [node name="flag" type="Node2D"]
-script = ExtResource("1_p83m7")
+script = ExtResource("1_nll7h")
 
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2(0, -91)
@@ -55,7 +55,7 @@ shape = SubResource("RectangleShape2D_73tmi")
 z_index = -2000
 position = Vector2(-21, -161)
 scale = Vector2(0.3125, 0.3125)
-texture = ExtResource("2_xjj8d")
+texture = ExtResource("2_i3v4q")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -66,6 +66,6 @@ libraries = {
 z_index = -2000
 position = Vector2(-20.7778, 34)
 scale = Vector2(0.309028, 0.305556)
-texture = ExtResource("3_0xgy2")
+texture = ExtResource("3_uhemx")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

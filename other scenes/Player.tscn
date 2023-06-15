@@ -1,35 +1,63 @@
-[gd_scene load_steps=15 format=3 uid="uid://c48poqcncba14"]
+[gd_scene load_steps=22 format=3 uid="uid://1qgm086k7f8s"]
 
-[ext_resource type="Texture2D" uid="uid://bw5yieycxw8yr" path="res://ujg2.png" id="1_gcam7"]
-[ext_resource type="Script" path="res://Player.gd" id="1_yahif"]
-[ext_resource type="Script" path="res://score.gd" id="3_yfl3r"]
+[ext_resource type="Script" path="res://scripts/Player.gd" id="1_p6w46"]
+[ext_resource type="Texture2D" uid="uid://bw5yieycxw8yr" path="res://textures/ujg2.png" id="2_4oca6"]
+[ext_resource type="Script" path="res://scripts/score.gd" id="3_tm0p3"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4spud"]
-atlas = ExtResource("1_gcam7")
+atlas = ExtResource("2_4oca6")
 region = Rect2(125, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ndqmo"]
-atlas = ExtResource("1_gcam7")
+atlas = ExtResource("2_4oca6")
 region = Rect2(221, 0, 16, 16)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_ywgdj"]
+atlas = ExtResource("2_4oca6")
+region = Rect2(29, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yqe44"]
+atlas = ExtResource("2_4oca6")
+region = Rect2(109, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2pcdc"]
+atlas = ExtResource("2_4oca6")
+region = Rect2(93, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_okr7v"]
+atlas = ExtResource("2_4oca6")
+region = Rect2(29, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fc3gs"]
+atlas = ExtResource("2_4oca6")
+region = Rect2(45, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vj02c"]
+atlas = ExtResource("2_4oca6")
+region = Rect2(61, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tu8ef"]
+atlas = ExtResource("2_4oca6")
+region = Rect2(77, 0, 16, 16)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_8xn7t"]
-atlas = ExtResource("1_gcam7")
+atlas = ExtResource("2_4oca6")
 region = Rect2(205, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_j65ao"]
-atlas = ExtResource("1_gcam7")
+atlas = ExtResource("2_4oca6")
 region = Rect2(141, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dih0n"]
-atlas = ExtResource("1_gcam7")
+atlas = ExtResource("2_4oca6")
 region = Rect2(157, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hgvyp"]
-atlas = ExtResource("1_gcam7")
+atlas = ExtResource("2_4oca6")
 region = Rect2(173, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dgiki"]
-atlas = ExtResource("1_gcam7")
+atlas = ExtResource("2_4oca6")
 region = Rect2(189, 0, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_1cvai"]
@@ -48,6 +76,52 @@ animations = [{
 }],
 "loop": true,
 "name": &"die",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ywgdj")
+}],
+"loop": true,
+"name": &"inverted",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yqe44")
+}],
+"loop": true,
+"name": &"invertidie",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2pcdc")
+}],
+"loop": true,
+"name": &"invertijump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_okr7v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fc3gs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vj02c")
+}],
+"loop": true,
+"name": &"invertirun",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tu8ef")
+}],
+"loop": true,
+"name": &"invertiskrrt",
 "speed": 5.0
 }, {
 "frames": [{
@@ -106,11 +180,14 @@ _data = {
 }
 
 [node name="Player" type="CharacterBody2D"]
-script = ExtResource("1_yahif")
+script = ExtResource("1_p6w46")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -8)
 sprite_frames = SubResource("SpriteFrames_1cvai")
+animation = &"invertirun"
+frame = 2
+frame_progress = 0.912099
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -8)
@@ -130,7 +207,7 @@ offset_top = -148.0
 offset_right = -21.0
 offset_bottom = -123.0
 text = "Score:"
-script = ExtResource("3_yfl3r")
+script = ExtResource("3_tm0p3")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
