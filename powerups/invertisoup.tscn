@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://bj7cqebmgrrrp"]
 
-[ext_resource type="Texture2D" uid="uid://b3olwktm618aw" path="res://textures/ess.png" id="1_4g8jy"]
+[ext_resource type="Texture2D" uid="uid://ce7iiw7yfggkm" path="res://textures/ess.png" id="1_4g8jy"]
 [ext_resource type="Script" path="res://powerups/invertisoup.gd" id="1_t7b86"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jgy50"]
@@ -37,7 +37,7 @@ script = ExtResource("1_t7b86")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_tng26")
 autoplay = "default"
-frame_progress = 0.195607
+frame_progress = 0.634816
 
 [node name="Area2D" type="Area2D" parent="."]
 

@@ -52,7 +52,7 @@ scale = Vector2(0.4, 9.14891)
 shape = SubResource("RectangleShape2D_73tmi")
 
 [node name="Flagge" type="Sprite2D" parent="."]
-z_index = -2000
+z_index = -1
 position = Vector2(-21, -161)
 scale = Vector2(0.3125, 0.3125)
 texture = ExtResource("2_i3v4q")
@@ -63,7 +63,7 @@ libraries = {
 }
 
 [node name="Jflag" type="Sprite2D" parent="."]
-z_index = -2000
+z_index = -1
 position = Vector2(-20.7778, 34)
 scale = Vector2(0.309028, 0.305556)
 texture = ExtResource("3_uhemx")
