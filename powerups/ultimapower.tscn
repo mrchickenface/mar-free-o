@@ -1,0 +1,53 @@
+[gd_scene load_steps=8 format=3 uid="uid://omtbj23ye7k7"]
+
+[ext_resource type="Script" path="res://powerups/ultimapower.gd" id="1_4hdr6"]
+[ext_resource type="Texture2D" uid="uid://ce7iiw7yfggkm" path="res://textures/ess.png" id="2_25jkw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h63u3"]
+size = Vector2(24, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_05upb"]
+size = Vector2(16, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aqpdh"]
+atlas = ExtResource("2_25jkw")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_drrmx"]
+atlas = ExtResource("2_25jkw")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tng26"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aqpdh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_drrmx")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="ultimapower" type="RigidBody2D"]
+script = ExtResource("1_4hdr6")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_h63u3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 2)
+shape = SubResource("RectangleShape2D_05upb")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -2.38419e-07)
+scale = Vector2(1, 1)
+sprite_frames = SubResource("SpriteFrames_tng26")
+autoplay = "default"
+frame_progress = 0.15866
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

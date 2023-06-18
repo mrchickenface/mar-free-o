@@ -10,6 +10,8 @@ var active = true
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 func _physics_process(delta):
+	if not $RayCast2D.is_colliding() or not $RayCast2D2.is_colliding():
+		direction *= -1
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y += gravity * delta

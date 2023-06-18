@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dfp0g65gmia30"]
+[gd_scene load_steps=14 format=3 uid="uid://cxurbalirj2nr"]
 
 [ext_resource type="Texture2D" uid="uid://bxmvpk4hjug25" path="res://textures/sss.png" id="1_oe3ff"]
 [ext_resource type="PackedScene" uid="uid://1qgm086k7f8s" path="res://other scenes/Player.tscn" id="2_ema2j"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://w7e37v0nx7jf" path="res://other scenes/death.tscn" id="6_pgybr"]
 [ext_resource type="PackedScene" uid="uid://cbnsw870yhj4m" path="res://other scenes/!block.tscn" id="7_geu1m"]
 [ext_resource type="PackedScene" uid="uid://b3tjw25oq4kuq" path="res://other scenes/acorn.tscn" id="8_kcha5"]
+[ext_resource type="PackedScene" uid="uid://bshu3qrf80wd" path="res://other scenes/landfish.tscn" id="9_5dcgk"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_gdu54"]
 
@@ -376,11 +377,10 @@ scale = Vector2(107.6, 1)
 
 [node name="!block" parent="." instance=ExtResource("7_geu1m")]
 position = Vector2(376, 68)
-contains = "res://other scenes/radish.tscn"
+contains = "res://powerups/radish.tscn"
 
 [node name="acorn" parent="." instance=ExtResource("8_kcha5")]
 position = Vector2(344, 125)
 
-[node name="acorn2" parent="." instance=ExtResource("8_kcha5")]
-position = Vector2(419, 125)
-direction = -1
+[node name="acorn2" parent="." instance=ExtResource("9_5dcgk")]
+position = Vector2(428, 125)

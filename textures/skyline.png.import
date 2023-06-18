@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d3vgphd2gvdk"
-path="res://.godot/imported/ujg2.png-61f6caa24b334f03fb1bf1f46b9f57b3.ctex"
+uid="uid://drd0rwqmps2nj"
+path="res://.godot/imported/skyline.png-c53476da95f1ee149ede27619fc08cbc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://textures/ujg2.png"
-dest_files=["res://.godot/imported/ujg2.png-61f6caa24b334f03fb1bf1f46b9f57b3.ctex"]
+source_file="res://textures/skyline.png"
+dest_files=["res://.godot/imported/skyline.png-c53476da95f1ee149ede27619fc08cbc.ctex"]
 
 [params]
 

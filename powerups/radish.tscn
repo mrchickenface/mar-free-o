@@ -1,6 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://bnevlv41fk41e"]
+[gd_scene load_steps=7 format=3 uid="uid://dth5epj16inft"]
 
-[ext_resource type="Script" path="res://other scenes/radish.gd" id="1_npl15"]
+[ext_resource type="Script" path="res://powerups/radish.gd" id="1_jbbwk"]
 [ext_resource type="Texture2D" uid="uid://ce7iiw7yfggkm" path="res://textures/ess.png" id="1_t47p4"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tqhpf"]
@@ -25,7 +25,7 @@ size = Vector2(16, 16)
 size = Vector2(24, 24)
 
 [node name="radish" type="RigidBody2D"]
-script = ExtResource("1_npl15")
+script = ExtResource("1_jbbwk")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_28x4t")

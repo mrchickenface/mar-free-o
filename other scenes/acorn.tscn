@@ -1,11 +1,15 @@
-[gd_scene load_steps=11 format=3 uid="uid://b3tjw25oq4kuq"]
+[gd_scene load_steps=12 format=3 uid="uid://b3tjw25oq4kuq"]
 
-[ext_resource type="Texture2D" uid="uid://dkthymd6s0qfw" path="res://textures/ujg2.png" id="1_ft07q"]
+[ext_resource type="Texture2D" uid="uid://d3vgphd2gvdk" path="res://textures/ujg2.png" id="1_ft07q"]
 [ext_resource type="Script" path="res://other scenes/acorn.gd" id="1_m0j54"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nyrc2"]
 atlas = ExtResource("1_ft07q")
 region = Rect2(29, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8y5h0"]
+atlas = ExtResource("1_ft07q")
+region = Rect2(29, 80, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ydtyc"]
 atlas = ExtResource("1_ft07q")
@@ -27,6 +31,14 @@ animations = [{
 }],
 "loop": true,
 "name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8y5h0")
+}],
+"loop": true,
+"name": &"die",
 "speed": 5.0
 }, {
 "frames": [{
@@ -54,13 +66,14 @@ size = Vector2(14, 14)
 size = Vector2(12, 2)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ooocg"]
-size = Vector2(16, 10)
+size = Vector2(16, 13)
 
 [node name="acorn" type="CharacterBody2D"]
 script = ExtResource("1_m0j54")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_nh660")
+animation = &"die"
 autoplay = "walk"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -76,7 +89,7 @@ shape = SubResource("RectangleShape2D_4l64y")
 [node name="Area2D2" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
-position = Vector2(0, 1)
+position = Vector2(0, 1.5)
 shape = SubResource("RectangleShape2D_ooocg")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

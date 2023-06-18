@@ -10,15 +10,19 @@ var active = true
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 func _physics_process(delta):
+	#if not $RayCast2D.is_colliding():
+		#direction *= -1
 	# Add the gravity.
-	if not is_on_floor():
+	if not active and not is_on_floor():
 		velocity.y += gravity * delta
-	velocity.x = direction * SPEED
+	if active:
+		velocity.x = direction * SPEED
+	else:
+		velocity.x = 0
 	
 	$AnimatedSprite2D.flip_h = -direction + 1
 
-	if active:
-		move_and_slide()
+	move_and_slide()
 
 
 func _on_area_2d_2_body_entered(body):

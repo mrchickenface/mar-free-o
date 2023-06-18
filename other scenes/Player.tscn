@@ -1,7 +1,7 @@
 [gd_scene load_steps=22 format=3 uid="uid://1qgm086k7f8s"]
 
 [ext_resource type="Script" path="res://scripts/Player.gd" id="1_p6w46"]
-[ext_resource type="Texture2D" uid="uid://dkthymd6s0qfw" path="res://textures/ujg2.png" id="2_4oca6"]
+[ext_resource type="Texture2D" uid="uid://d3vgphd2gvdk" path="res://textures/ujg2.png" id="2_4oca6"]
 [ext_resource type="Script" path="res://scripts/score.gd" id="3_tm0p3"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4spud"]
@@ -12,9 +12,9 @@ region = Rect2(125, 0, 16, 16)
 atlas = ExtResource("2_4oca6")
 region = Rect2(221, 0, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ywgdj"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_7samx"]
 atlas = ExtResource("2_4oca6")
-region = Rect2(29, 16, 16, 16)
+region = Rect2(13, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yqe44"]
 atlas = ExtResource("2_4oca6")
@@ -80,7 +80,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ywgdj")
+"texture": SubResource("AtlasTexture_7samx")
 }],
 "loop": true,
 "name": &"inverted",
@@ -185,6 +185,8 @@ script = ExtResource("1_p6w46")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -8)
 sprite_frames = SubResource("SpriteFrames_1cvai")
+animation = &"invertijump"
+frame_progress = 0.553306
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -8)
