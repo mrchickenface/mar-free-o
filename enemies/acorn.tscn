@@ -1,7 +1,7 @@
-[gd_scene load_steps=12 format=3 uid="uid://b3tjw25oq4kuq"]
+[gd_scene load_steps=12 format=3 uid="uid://dm365lg0ido6s"]
 
 [ext_resource type="Texture2D" uid="uid://d3vgphd2gvdk" path="res://textures/ujg2.png" id="1_ft07q"]
-[ext_resource type="Script" path="res://other scenes/acorn.gd" id="1_m0j54"]
+[ext_resource type="Script" path="res://scripts/acorn.gd" id="1_mjuuy"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nyrc2"]
 atlas = ExtResource("1_ft07q")
@@ -69,7 +69,7 @@ size = Vector2(12, 2)
 size = Vector2(16, 13)
 
 [node name="acorn" type="CharacterBody2D"]
-script = ExtResource("1_m0j54")
+script = ExtResource("1_mjuuy")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_nh660")

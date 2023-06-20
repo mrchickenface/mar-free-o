@@ -1,7 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://bj7cqebmgrrrp"]
+[gd_scene load_steps=8 format=3 uid="uid://bqc17vg8wj7jy"]
 
 [ext_resource type="Texture2D" uid="uid://ce7iiw7yfggkm" path="res://textures/ess.png" id="1_4g8jy"]
-[ext_resource type="Script" path="res://powerups/invertisoup.gd" id="1_t7b86"]
+[ext_resource type="Script" path="res://scripts/invertisoup.gd" id="1_85ec6"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jgy50"]
 atlas = ExtResource("1_4g8jy")
@@ -32,7 +32,7 @@ size = Vector2(24, 24)
 size = Vector2(16, 12)
 
 [node name="invertisoup" type="RigidBody2D"]
-script = ExtResource("1_t7b86")
+script = ExtResource("1_85ec6")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_tng26")

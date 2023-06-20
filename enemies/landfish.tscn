@@ -1,6 +1,6 @@
 [gd_scene load_steps=12 format=3 uid="uid://bshu3qrf80wd"]
 
-[ext_resource type="Script" path="res://other scenes/landfish.gd" id="1_4hqix"]
+[ext_resource type="Script" path="res://scripts/landfish.gd" id="1_h4x4u"]
 [ext_resource type="Texture2D" uid="uid://d3vgphd2gvdk" path="res://textures/ujg2.png" id="2_ju2n4"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lj6ud"]
@@ -69,7 +69,7 @@ size = Vector2(12, 2)
 size = Vector2(14, 10)
 
 [node name="landfish" type="CharacterBody2D"]
-script = ExtResource("1_4hqix")
+script = ExtResource("1_h4x4u")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(-1, 0)

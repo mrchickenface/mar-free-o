@@ -36,7 +36,7 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_af5su"]
 size = Vector2(16, 16)
 
-[node name="!block" type="Node2D"]
+[node name="!block" type="Node2D" groups=["Level"]]
 script = ExtResource("1_slh4p")
 
 [node name="Area2D" type="Area2D" parent="."]

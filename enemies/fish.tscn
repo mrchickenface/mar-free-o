@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://d1fb3e02ltt0r"]
 
-[ext_resource type="Script" path="res://other scenes/fish.gd" id="1_458qt"]
+[ext_resource type="Script" path="res://scripts/fish.gd" id="1_hvc1f"]
 [ext_resource type="Texture2D" uid="uid://d3vgphd2gvdk" path="res://textures/ujg2.png" id="2_ju2n4"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xlohb"]
@@ -59,7 +59,7 @@ size = Vector2(14, 2)
 size = Vector2(18, 9)
 
 [node name="fish" type="CharacterBody2D"]
-script = ExtResource("1_458qt")
+script = ExtResource("1_hvc1f")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(-1, 0)

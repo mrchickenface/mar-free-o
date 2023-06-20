@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://b3j1lwyjoo1e5"]
+[gd_scene load_steps=18 format=3 uid="uid://c6r68nd6dad8n"]
 
 [ext_resource type="Texture2D" uid="uid://bxmvpk4hjug25" path="res://textures/sss.png" id="1_f5odi"]
 [ext_resource type="PackedScene" uid="uid://1qgm086k7f8s" path="res://other scenes/Player.tscn" id="2_w6jnr"]
@@ -10,9 +10,9 @@
 [ext_resource type="Texture2D" uid="uid://cb2t2avubka7b" path="res://textures/Boat_with_autumny_mountains_at_Digermulen,_Hinnøya,_Norway,_Norway,_2015_September.jpg" id="6_osrg7"]
 [ext_resource type="Texture2D" uid="uid://ducs2de81aho4" path="res://textures/puHMDJRjNHslnJx.png" id="7_wjg6u"]
 [ext_resource type="PackedScene" uid="uid://cbnsw870yhj4m" path="res://other scenes/!block.tscn" id="7_x6rht"]
-[ext_resource type="PackedScene" uid="uid://b3tjw25oq4kuq" path="res://other scenes/acorn.tscn" id="8_px0lc"]
+[ext_resource type="PackedScene" uid="uid://dm365lg0ido6s" path="res://enemies/acorn.tscn" id="8_px0lc"]
 [ext_resource type="PackedScene" uid="uid://cnve6lqbw361a" path="res://other scenes/coin.tscn" id="9_x5m5d"]
-[ext_resource type="PackedScene" uid="uid://d1fb3e02ltt0r" path="res://other scenes/fish.tscn" id="13_3tu7u"]
+[ext_resource type="PackedScene" uid="uid://d1fb3e02ltt0r" path="res://enemies/fish.tscn" id="13_3tu7u"]
 [ext_resource type="PackedScene" uid="uid://omtbj23ye7k7" path="res://powerups/ultimapower.tscn" id="14_qodm6"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_gdu54"]
@@ -214,7 +214,7 @@ sources/3 = SubResource("TileSetAtlasSource_qpa4e")
 
 [node name="Node2D" type="Node2D"]
 
-[node name="TileMap" type="TileMap" parent="."]
+[node name="TileMap" type="TileMap" parent="." groups=["Level"]]
 position = Vector2(-5, -11)
 tile_set = SubResource("TileSet_4chk5")
 format = 2
